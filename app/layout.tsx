@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eyelectric-28th-anniversary.mutedcrocus16.chatgpt.site"),
   title: "28th Anniversary & Thanksgiving | Eyelectric & Eyelectrix",
   description:
     "You are cordially invited to the 28th Anniversary and Thanksgiving Celebration of Eyelectric Incorporated and Eyelectrix Construction Corporation on November 20, 2026.",
@@ -14,8 +15,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Eyelectric Incorporated" }],
   creator: "Eyelectric Incorporated",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
+    url: "/",
     locale: "en_PH",
     title: "Eyelectric 28th Anniversary & Thanksgiving",
     description:
