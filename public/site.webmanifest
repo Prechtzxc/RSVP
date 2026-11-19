@@ -1,0 +1,9 @@
+{
+  "name": "Eyelectric 28th Anniversary & Thanksgiving",
+  "short_name": "Eyelectric 28",
+  "description": "Premium digital invitation for the 28th Anniversary and Thanksgiving Celebration.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061a35",
+  "theme_color": "#061a35"
+}

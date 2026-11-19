@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+/qa/
+/outputs/
+
+# local files
+.DS_Store
+*.log
+
+# supplied reference files retained locally, not deployed as source
+/911876651_1427986312650307_5466093636183445896_n.jpg
+/Eyelectric_28th_Anniversary_Parking_Corrected_Clickable (1).pdf
+
+# typescript
+*.tsbuildinfo
