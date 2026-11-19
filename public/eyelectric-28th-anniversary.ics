@@ -1,27 +1,28 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Eyelectric Incorporated//28th Anniversary//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VTIMEZONE
-TZID:Asia/Manila
-X-LIC-LOCATION:Asia/Manila
-BEGIN:STANDARD
-TZOFFSETFROM:+0800
-TZOFFSETTO:+0800
-TZNAME:PST
-DTSTART:19700101T000000
-END:STANDARD
-END:VTIMEZONE
-BEGIN:VEVENT
-UID:eyelectric-28th-anniversary-20261120@eyelectricinc.com
-DTSTAMP:20261119T000000Z
-DTSTART;TZID=Asia/Manila:20261120T150000
-DTEND;TZID=Asia/Manila:20261120T190000
-SUMMARY:Eyelectric & Eyelectrix 28th Anniversary and Thanksgiving
-LOCATION:Eyelectric\, Inc. Home Office\, 3340 San Francisco Road\, Brgy. Halang\, Biñan City\, Laguna\, Philippines
-DESCRIPTION:Join us as we celebrate 28 years of God's faithfulness\, our people's dedication\, and the continued growth of Eyelectric\, Inc. and Eyelectrix. RSVP: +63 917 148 9572
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-END:VEVENT
-END:VCALENDAR
+1| BEGIN:VCALENDAR
+2| VERSION:2.0
+3| PRODID:-//Eyelectric Incorporated//28th Anniversary//EN
+4| CALSCALE:GREGORIAN
+5| METHOD:PUBLISH
+6| BEGIN:VTIMEZONE
+7| TZID:Asia/Manila
+8| X-LIC-LOCATION:Asia/Manila
+9| BEGIN:STANDARD
+10| TZOFFSETFROM:+0800
+11| TZOFFSETTO:+0800
+12| TZNAME:PST
+13| DTSTART:19700101T000000
+14| END:STANDARD
+15| END:VTIMEZONE
+16| BEGIN:VEVENT
+17| UID:eyelectric-28th-anniversary-20261120@eyelectricinc.com
+18| DTSTAMP:20261119T000000Z
+19| DTSTART;TZID=Asia/Manila:20261120T153000
+20| DTEND;TZID=Asia/Manila:20261120T190000
+21| SUMMARY:Eyelectric & Eyelectrix 28th Anniversary and Thanksgiving
+22| LOCATION:Eyelectric\, Inc. Home Office\, 3340 San Francisco Road\, Brgy. Halang\, Biñan City\, Laguna\, Philippines
+23| DESCRIPTION:Join us as we celebrate 28 years of God's faithfulness\, our people's dedication\, and the continued growth of Eyelectric\, Inc. and Eyelectrix. RSVP: +63 917 148 9572
+24| STATUS:CONFIRMED
+25| TRANSP:OPAQUE
+26| END:VEVENT
+27| END:VCALENDAR
+28| 
