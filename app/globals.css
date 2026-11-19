@@ -89,10 +89,6 @@ a {
   margin-inline: auto;
 }
 
-.narrow-shell {
-  max-width: 59rem;
-}
-
 .section-padding {
   padding-block: clamp(5rem, 11vw, 8.5rem);
 }
@@ -157,16 +153,6 @@ a {
 .button-outline:hover {
   border-color: var(--gold-300);
   background: rgba(233, 202, 117, 0.08);
-}
-
-.button-outline-navy {
-  border-color: rgba(10, 40, 80, 0.45);
-  color: var(--navy-900);
-}
-
-.button-outline-navy:hover {
-  border-color: var(--navy-900);
-  background: rgba(10, 40, 80, 0.05);
 }
 
 /* Original artwork is clipped non-destructively so both official logos remain unchanged. */
@@ -301,12 +287,17 @@ a {
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
+  overflow: visible;
   filter: drop-shadow(0 9px 22px rgba(184, 122, 18, 0.22));
   font-family: var(--serif);
   line-height: 0.69;
 }
 
 .anniversary-number > span {
+  display: inline-block;
+  overflow: visible;
+  margin-right: -0.12em;
+  padding-right: 0.12em;
   background: linear-gradient(135deg, #91621b 0%, #fceaaa 22%, #bd8122 43%, #fff0b2 63%, #a96f15 82%, #efd47c 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -575,98 +566,6 @@ a {
   color: var(--ivory);
 }
 
-/* Gratitude */
-.gratitude-section {
-  position: relative;
-  background:
-    radial-gradient(circle at 50% 5%, rgba(228, 187, 89, 0.13), transparent 30%),
-    var(--ivory);
-}
-
-.gratitude-section::before,
-.gratitude-section::after {
-  position: absolute;
-  width: 10rem;
-  height: 10rem;
-  border: 1px solid rgba(185, 128, 29, 0.13);
-  border-radius: 50%;
-  content: "";
-}
-
-.gratitude-section::before { top: -5rem; left: -5rem; }
-.gratitude-section::after { right: -5rem; bottom: -5rem; }
-
-.invitation-quote {
-  position: relative;
-  max-width: 49rem;
-  margin: clamp(3rem, 7vw, 5rem) auto;
-  padding-inline: clamp(0.3rem, 4vw, 3rem);
-  text-align: center;
-}
-
-.quote-mark {
-  display: block;
-  height: 2.7rem;
-  color: rgba(185, 128, 29, 0.32);
-  font-family: var(--serif);
-  font-size: 5.5rem;
-  line-height: 0.8;
-}
-
-.invitation-quote blockquote {
-  margin: 0;
-  color: var(--navy-900);
-  font-family: var(--serif);
-  font-size: clamp(1.55rem, 4.8vw, 2.35rem);
-  font-style: italic;
-  line-height: 1.35;
-  text-wrap: balance;
-}
-
-.gratitude-themes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(185, 128, 29, 0.32);
-  border-bottom: 1px solid rgba(185, 128, 29, 0.32);
-}
-
-.gratitude-theme {
-  position: relative;
-  padding: clamp(2rem, 5vw, 3.4rem) clamp(1.1rem, 3vw, 2.5rem);
-  text-align: center;
-}
-
-.gratitude-theme + .gratitude-theme::before {
-  position: absolute;
-  top: 20%;
-  bottom: 20%;
-  left: 0;
-  width: 1px;
-  background: rgba(185, 128, 29, 0.25);
-  content: "";
-}
-
-.theme-symbol {
-  color: var(--gold-500);
-  font-size: 1rem;
-}
-
-.gratitude-theme h3 {
-  margin: 0.8rem 0 0.55rem;
-  color: var(--navy-900);
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.gratitude-theme p {
-  margin: 0;
-  color: #42516a;
-  font-size: 0.91rem;
-  line-height: 1.75;
-}
-
 /* Details */
 .details-section {
   position: relative;
@@ -884,73 +783,6 @@ a {
   box-shadow: 0 0 0 0.35rem rgba(233, 202, 117, 0.12);
 }
 
-/* RSVP */
-.rsvp-section {
-  position: relative;
-  background:
-    radial-gradient(circle at 50% 60%, rgba(233, 202, 117, 0.22), transparent 39%),
-    linear-gradient(180deg, #fffaf0, #f5ecda);
-}
-
-.rsvp-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: clamp(2.5rem, 6vw, 4rem);
-  text-align: center;
-}
-
-.rsvp-content > p {
-  max-width: 40rem;
-  margin: 0;
-  color: #40506a;
-  font-family: var(--serif);
-  font-size: clamp(1.2rem, 4vw, 1.55rem);
-  line-height: 1.45;
-  text-wrap: balance;
-}
-
-.rsvp-number {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-  color: var(--navy-900);
-  font-family: var(--serif);
-  font-size: clamp(2.25rem, 9vw, 4.35rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1;
-}
-
-.rsvp-number small {
-  margin-bottom: 0.75rem;
-  color: #986819;
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  text-indent: 0.35em;
-}
-
-.rsvp-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.rsvp-actions .button {
-  min-width: 12.2rem;
-}
-
-.contact-note {
-  margin-top: 1.35rem;
-  color: #687489;
-  font-size: 0.75rem;
-}
-
 /* Location */
 .location-section {
   background: #f8f9fb;
@@ -1083,140 +915,6 @@ a {
   line-height: 1.5;
 }
 
-/* Closing */
-.closing-section {
-  position: relative;
-  isolation: isolate;
-  min-height: 46rem;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(25, 76, 131, 0.5), transparent 45%),
-    linear-gradient(160deg, #020e20, #082346 53%, #020d1d);
-  color: var(--ivory);
-}
-
-.closing-radiance {
-  position: absolute;
-  z-index: -1;
-  top: 16%;
-  left: 50%;
-  width: 44rem;
-  max-width: 120vw;
-  aspect-ratio: 1;
-  transform: translateX(-50%);
-  border: 1px solid rgba(233, 202, 117, 0.09);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 4rem rgba(233, 202, 117, 0.028),
-    0 0 0 8rem rgba(233, 202, 117, 0.018);
-}
-
-.closing-frame {
-  position: absolute;
-  z-index: -1;
-  inset: 1rem;
-  border: 1px solid rgba(233, 202, 117, 0.32);
-  pointer-events: none;
-}
-
-.closing-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.closing-lockup {
-  width: min(76vw, 36rem);
-  margin-inline: auto;
-}
-
-.closing-kicker {
-  display: block;
-  margin-top: clamp(2.7rem, 6vw, 4rem);
-  color: var(--gold-300);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.closing-content h2 {
-  margin: 1.2rem 0 0;
-  color: var(--ivory);
-  font-family: var(--serif);
-  font-size: clamp(2.6rem, 9vw, 5.4rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 0.93;
-  text-wrap: balance;
-}
-
-.closing-content > div > p {
-  max-width: 39rem;
-  margin: 1.5rem auto 0;
-  color: rgba(255, 250, 240, 0.73);
-  font-family: var(--serif);
-  font-size: clamp(1.12rem, 3.5vw, 1.45rem);
-  font-style: italic;
-  line-height: 1.45;
-}
-
-.closing-date {
-  display: grid;
-  width: min(100%, 30rem);
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 1rem;
-  margin-block: 2.1rem;
-  color: var(--gold-100);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.closing-date span {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-400));
-}
-
-.closing-date span:last-child {
-  background: linear-gradient(90deg, var(--gold-400), transparent);
-}
-
-.footer-ornament {
-  display: grid;
-  width: min(100%, 33rem);
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 1rem;
-  margin-top: clamp(4rem, 10vw, 7rem);
-  color: var(--gold-400);
-}
-
-.footer-ornament span {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, currentColor);
-}
-
-.footer-ornament span:last-child {
-  background: linear-gradient(90deg, currentColor, transparent);
-}
-
-.footer-ornament i {
-  font-style: normal;
-}
-
-.copyright {
-  margin: 1.2rem 0 max(0.2rem, env(safe-area-inset-bottom));
-  color: rgba(255, 250, 240, 0.42);
-  font-size: 0.63rem;
-  letter-spacing: 0.09em;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-
 @media (max-width: 56rem) {
   .details-layout {
     grid-template-columns: 1fr;
@@ -1235,26 +933,8 @@ a {
 }
 
 @media (max-width: 43rem) {
-  .page-shell,
-  .narrow-shell {
+  .page-shell {
     width: calc(100% - 2rem);
-  }
-
-  .gratitude-themes {
-    grid-template-columns: 1fr;
-  }
-
-  .gratitude-theme {
-    padding-block: 2.1rem;
-  }
-
-  .gratitude-theme + .gratitude-theme::before {
-    top: 0;
-    right: 24%;
-    bottom: auto;
-    left: 24%;
-    width: auto;
-    height: 1px;
   }
 
   .location-grid {
@@ -1265,9 +945,6 @@ a {
     min-height: 0;
   }
 
-  .closing-frame {
-    inset: 0.65rem;
-  }
 }
 
 @media (max-width: 29rem) {
@@ -1315,12 +992,6 @@ a {
     width: auto;
   }
 
-  .rsvp-actions {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .event-fact {
     grid-template-columns: 3.7rem 1fr;
     gap: 0.85rem;
@@ -1346,8 +1017,7 @@ a {
 }
 
 @media (max-width: 22.5rem) {
-  .page-shell,
-  .narrow-shell {
+  .page-shell {
     width: calc(100% - 1.5rem);
   }
 

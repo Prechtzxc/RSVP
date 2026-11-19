@@ -156,9 +156,13 @@ try {
           }));
         const buttons = [...document.querySelectorAll("a.button")];
         const thanksgiving = document.querySelector(".thanksgiving-script");
+        const anniversaryNumber = document.querySelector(".anniversary-number > span");
+        const anniversaryComposition = document.querySelector(".anniversary-composition");
         const venue = document.querySelector(".hero-venue");
         const heroButton = document.querySelector(".hero-button");
         const thanksgivingRect = thanksgiving.getBoundingClientRect();
+        const anniversaryNumberRect = anniversaryNumber.getBoundingClientRect();
+        const anniversaryCompositionRect = anniversaryComposition.getBoundingClientRect();
         const venueRect = venue.getBoundingClientRect();
         const heroButtonRect = heroButton.getBoundingClientRect();
         return {
@@ -176,6 +180,16 @@ try {
             height: Math.round(thanksgivingRect.height * 10) / 10,
             lineHeight: getComputedStyle(thanksgiving).lineHeight,
             paddingBottom: getComputedStyle(thanksgiving).paddingBottom,
+          },
+          anniversaryNumber: {
+            text: anniversaryNumber.textContent.trim(),
+            fullyContained: anniversaryNumberRect.left >= anniversaryCompositionRect.left
+              && anniversaryNumberRect.right <= anniversaryCompositionRect.right,
+            left: Math.round(anniversaryNumberRect.left * 10) / 10,
+            right: Math.round(anniversaryNumberRect.right * 10) / 10,
+            width: Math.round(anniversaryNumberRect.width * 10) / 10,
+            overflow: getComputedStyle(anniversaryNumber).overflow,
+            paddingRight: getComputedStyle(anniversaryNumber).paddingRight,
           },
           venue: {
             text: venue.textContent.trim().replace(/\\s+/g, " "),
@@ -195,18 +209,12 @@ try {
   }
 
   await setViewport(client, 390, 844);
-  await evaluate(client, 'document.querySelector("#gratitude-title").scrollIntoView(); new Promise((resolve) => setTimeout(resolve, 1200))');
-  await capture(client, "gratitude-390-exact.png");
   await evaluate(client, 'document.querySelector("#details").scrollIntoView(); new Promise((resolve) => setTimeout(resolve, 1200))');
   await capture(client, "details-390-exact.png");
   await evaluate(client, 'document.querySelector(".countdown-panel").scrollIntoView({ block: "center" }); new Promise((resolve) => setTimeout(resolve, 1200))');
   await capture(client, "countdown-390-exact.png");
-  await evaluate(client, 'document.querySelector("#rsvp-title").scrollIntoView(); new Promise((resolve) => setTimeout(resolve, 1200))');
-  await capture(client, "rsvp-390-exact.png");
   await evaluate(client, 'document.querySelector("#location-title").scrollIntoView(); new Promise((resolve) => setTimeout(resolve, 1200))');
   await capture(client, "location-390-exact.png");
-  await evaluate(client, 'document.querySelector("#closing-title").scrollIntoView({ block: "center" }); new Promise((resolve) => setTimeout(resolve, 1200))');
-  await capture(client, "closing-390-exact.png");
 
   const interactionAudit = await evaluate(
     client,
@@ -220,6 +228,22 @@ try {
         smsLinks: hrefs.filter((href) => href?.startsWith("sms:")),
         calendarLink: hrefs.find((href) => href?.endsWith(".ics")),
         mapLinks: hrefs.filter((href) => href?.includes("google.com/maps")),
+        heroDetailsHref: document.querySelector(".hero-button")?.getAttribute("href"),
+        heroDetailsTargetExists: Boolean(document.querySelector("#details")),
+        mainSections: [...document.querySelectorAll("main > section")].map((section) => ({
+          className: section.className,
+          id: section.id,
+        })),
+        removedSections: {
+          gratitude: document.querySelectorAll(".gratitude-section, #gratitude-title").length,
+          rsvp: document.querySelectorAll(".rsvp-section, #rsvp-title").length,
+          closing: document.querySelectorAll(".closing-section, #closing-title").length,
+        },
+        removedCopyMatches: [
+          "28 Years of Faithfulness, Dedication & Growth",
+          "We Would Be Honored by Your Presence",
+          "Together in Gratitude. Forward in Hope.",
+        ].filter((copy) => document.body.innerText.includes(copy)),
         logoNaturalSize: (() => {
           const image = document.querySelector(".brand-crop img");
           return image ? [image.naturalWidth, image.naturalHeight] : null;

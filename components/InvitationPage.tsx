@@ -7,16 +7,10 @@ import {
   CarFront,
   Clock3,
   MapPin,
-  MessageCircle,
   Navigation,
-  Phone,
 } from "lucide-react";
 import { BrandLockup } from "./BrandLockup";
 
-const RSVP_NUMBER = "+639171489572";
-const SMS_MESSAGE = encodeURIComponent(
-  "Good day! I would like to confirm my attendance at Eyelectric and Eyelectrix's 28th Anniversary and Thanksgiving Celebration on November 20, 2026. Thank you!",
-);
 const VENUE_MAP =
   "https://www.google.com/maps/search/?api=1&query=83QC%2BC2%20Bi%C3%B1an%2C%20Laguna%2C%20Philippines";
 const PARKING_MAP =
@@ -340,42 +334,6 @@ export function InvitationPage() {
         </div>
       </section>
 
-      <section className="gratitude-section section-padding" aria-labelledby="gratitude-title">
-        <div className="page-shell narrow-shell">
-          <Reveal>
-            <SectionHeading eyebrow="A legacy held in gratitude">
-              <span id="gratitude-title">28 Years of Faithfulness, Dedication &amp; Growth</span>
-            </SectionHeading>
-          </Reveal>
-
-          <Reveal className="invitation-quote" delay={0.08}>
-            <span className="quote-mark" aria-hidden="true">
-              “
-            </span>
-            <blockquote>
-              We are pleased to invite you to join us as we celebrate 28 years of God&apos;s faithfulness, our
-              people&apos;s dedication, and the continued growth of both Eyelectric, Inc and Eyelectrix.
-            </blockquote>
-          </Reveal>
-
-          <div className="gratitude-themes">
-            {[
-              ["Faithfulness", "With gratitude for the grace that has sustained the journey."],
-              ["Dedication", "Honoring the people whose commitment makes every year meaningful."],
-              ["Continued Growth", "Looking ahead with purpose, partnership, and hope."],
-            ].map(([title, copy], index) => (
-              <Reveal className="gratitude-theme" delay={index * 0.08} key={title}>
-                <span className="theme-symbol" aria-hidden="true">
-                  {index === 0 ? "✦" : index === 1 ? "◇" : "❈"}
-                </span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="details" className="details-section section-padding" aria-labelledby="details-title">
         <div className="details-pattern" aria-hidden="true" />
         <div className="page-shell details-shell">
@@ -428,34 +386,6 @@ export function InvitationPage() {
         </div>
       </section>
 
-      <section className="rsvp-section section-padding" aria-labelledby="rsvp-title">
-        <div className="page-shell narrow-shell">
-          <Reveal>
-            <SectionHeading eyebrow="Your presence is a gift">
-              <span id="rsvp-title">We Would Be Honored by Your Presence</span>
-            </SectionHeading>
-          </Reveal>
-          <Reveal className="rsvp-content" delay={0.08}>
-            <p>Kindly confirm your attendance and join us for this special celebration.</p>
-            <a className="rsvp-number" href={`tel:${RSVP_NUMBER}`} aria-label="Call 0917 148 9572">
-              <small>RSVP</small>
-              0917-148-9572
-            </a>
-            <div className="rsvp-actions">
-              <a className="button button-navy" href={`tel:${RSVP_NUMBER}`}>
-                <Phone size={19} aria-hidden="true" />
-                Call to RSVP
-              </a>
-              <a className="button button-outline-navy" href={`sms:${RSVP_NUMBER}?body=${SMS_MESSAGE}`}>
-                <MessageCircle size={19} aria-hidden="true" />
-                Text to RSVP
-              </a>
-            </div>
-            <small className="contact-note">Confirmation is handled directly with the organizers by phone or SMS.</small>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="location-section section-padding" aria-labelledby="location-title">
         <div className="page-shell">
           <Reveal>
@@ -494,38 +424,6 @@ export function InvitationPage() {
               will transport guests to the Eyelectric office.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="closing-section section-padding" aria-labelledby="closing-title">
-        <div className="closing-radiance" aria-hidden="true" />
-        <div className="closing-frame" aria-hidden="true" />
-        <div className="page-shell closing-content">
-          <Reveal>
-            <BrandLockup className="closing-lockup" />
-          </Reveal>
-          <Reveal delay={0.06}>
-            <span className="closing-kicker">28th Anniversary &amp; Thanksgiving</span>
-            <h2 id="closing-title">Together in Gratitude.<br />Forward in Hope.</h2>
-            <p>Let us come together in gratitude for the past, and with hope for the years ahead.</p>
-          </Reveal>
-          <Reveal className="closing-date" delay={0.1}>
-            <span aria-hidden="true" />
-            <time dateTime="2026-11-20">November 20, 2026</time>
-            <span aria-hidden="true" />
-          </Reveal>
-          <Reveal delay={0.12}>
-            <a className="button button-gold" href={`tel:${RSVP_NUMBER}`}>
-              <Phone size={19} aria-hidden="true" />
-              Call to RSVP
-            </a>
-          </Reveal>
-          <div className="footer-ornament" aria-hidden="true">
-            <span />
-            <i>❈</i>
-            <span />
-          </div>
-          <p className="copyright">Eyelectric Incorporated · Eyelectrix Construction Corporation</p>
         </div>
       </section>
 
