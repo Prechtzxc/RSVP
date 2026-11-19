@@ -155,6 +155,12 @@ try {
             right: Math.round(rect.right * 10) / 10,
           }));
         const buttons = [...document.querySelectorAll("a.button")];
+        const thanksgiving = document.querySelector(".thanksgiving-script");
+        const venue = document.querySelector(".hero-venue");
+        const heroButton = document.querySelector(".hero-button");
+        const thanksgivingRect = thanksgiving.getBoundingClientRect();
+        const venueRect = venue.getBoundingClientRect();
+        const heroButtonRect = heroButton.getBoundingClientRect();
         return {
           width: innerWidth,
           clientWidth: root.clientWidth,
@@ -162,12 +168,28 @@ try {
           horizontalOverflow: root.scrollWidth > root.clientWidth,
           offenders,
           minButtonHeight: Math.min(...buttons.map((button) => button.getBoundingClientRect().height)),
+          thanksgiving: {
+            text: thanksgiving.textContent.trim().replace(/\\s+/g, " "),
+            fullyVisibleHorizontally: thanksgivingRect.left >= 0 && thanksgivingRect.right <= root.clientWidth,
+            left: Math.round(thanksgivingRect.left * 10) / 10,
+            right: Math.round(thanksgivingRect.right * 10) / 10,
+            height: Math.round(thanksgivingRect.height * 10) / 10,
+            lineHeight: getComputedStyle(thanksgiving).lineHeight,
+            paddingBottom: getComputedStyle(thanksgiving).paddingBottom,
+          },
+          venue: {
+            text: venue.textContent.trim().replace(/\\s+/g, " "),
+            fullyVisibleHorizontally: venueRect.left >= 0 && venueRect.right <= root.clientWidth,
+            aboveButton: venueRect.bottom <= heroButtonRect.top,
+          },
+          heroButtonVisibleInInitialViewport: heroButtonRect.bottom <= innerHeight,
+          nextDevPortalCount: document.querySelectorAll("nextjs-portal").length,
         };
       })()`,
     );
     reports.push(report);
 
-    if ([320, 390, 768, 1440].includes(width)) {
+    if ([320, 375, 390, 430, 768, 1440].includes(width)) {
       await capture(client, `hero-${width}-exact.png`);
     }
   }

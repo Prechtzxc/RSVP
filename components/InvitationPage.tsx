@@ -311,12 +311,25 @@ export function InvitationPage() {
             </div>
           </motion.div>
 
+          <motion.div
+            className="hero-venue"
+            initial={reducedMotion ? false : { opacity: 0, y: 14 }}
+            animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.98, ease: heroEase }}
+          >
+            <div className="hero-venue-name">
+              <MapPin size={17} aria-hidden="true" />
+              <strong>Eyelectric, Inc. Home Office</strong>
+            </div>
+            <address>3340 San Francisco Road, Brgy. Halang, Biñan City</address>
+          </motion.div>
+
           <motion.a
             className="button button-gold hero-button"
             href="#details"
             initial={reducedMotion ? false : { opacity: 0, y: 14 }}
             animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.05, ease: heroEase }}
+            transition={{ duration: 0.8, delay: 1.12, ease: heroEase }}
           >
             View Celebration Details
           </motion.a>

@@ -263,7 +263,7 @@ a {
   grid-template-columns: minmax(1.5rem, 1fr) auto minmax(1.5rem, 1fr);
   align-items: center;
   gap: 0.9rem;
-  margin-top: clamp(1.6rem, 4vh, 2.8rem);
+  margin-top: clamp(1.2rem, 2.5vh, 1.9rem);
 }
 
 .hero-invitation-line span {
@@ -291,7 +291,9 @@ a {
   width: 100%;
   min-width: 0;
   max-width: 100%;
-  margin-top: clamp(1.5rem, 3.2vh, 2.4rem);
+  overflow: visible;
+  margin-top: clamp(1rem, 2vh, 1.5rem);
+  padding-inline: 0.25rem;
 }
 
 .anniversary-number {
@@ -344,16 +346,18 @@ a {
 .thanksgiving-script {
   display: block;
   width: max-content;
-  max-width: 100%;
-  margin: 0.3rem 0 -0.2rem;
+  max-width: calc(100% - 0.5rem);
+  margin: 0.15rem 0 -0.15rem;
   margin-inline: auto;
+  padding: 0.06em 0.28em 0.3em;
   background: linear-gradient(100deg, #e4bb59, #fff1bd 48%, #bd7f1e);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-family: var(--script);
-  font-size: clamp(2.1rem, 8.7vw, 5.2rem);
-  line-height: 0.86;
+  font-size: clamp(2rem, 8.4vw, 5rem);
+  line-height: 1.08;
+  overflow: visible;
   white-space: nowrap;
 }
 
@@ -366,7 +370,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  margin-top: clamp(1.5rem, 4vh, 2.8rem);
+  margin-top: clamp(0.65rem, 1.7vh, 1rem);
   color: rgba(255, 250, 240, 0.88);
   font-size: clamp(0.74rem, 2.5vw, 0.88rem);
   font-weight: 500;
@@ -391,8 +395,50 @@ a {
   background: rgba(233, 202, 117, 0.45);
 }
 
+.hero-venue {
+  display: flex;
+  width: min(100%, 31rem);
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(0.7rem, 1.6vh, 1rem);
+  text-align: center;
+}
+
+.hero-venue-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.hero-venue-name svg {
+  flex: 0 0 auto;
+  color: var(--gold-300);
+  stroke-width: 1.6;
+}
+
+.hero-venue-name strong {
+  color: var(--gold-100);
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 3vw, 1.28rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.15;
+}
+
+.hero-venue address {
+  max-width: 27rem;
+  margin-top: 0.28rem;
+  color: rgba(255, 250, 240, 0.72);
+  font-size: clamp(0.77rem, 2vw, 0.84rem);
+  font-style: normal;
+  letter-spacing: 0.025em;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
 .hero-button {
-  margin-top: clamp(1.6rem, 4vh, 2.5rem);
+  margin-top: clamp(1rem, 2.2vh, 1.5rem);
 }
 
 .hero-frame {
@@ -1238,7 +1284,7 @@ a {
   }
 
   .anniversary-composition {
-    margin-top: 1.4rem;
+    margin-top: 1.05rem;
   }
 
   .anniversary-composition h1 {
@@ -1249,6 +1295,10 @@ a {
   .hero-event-meta {
     gap: 0.55rem;
     letter-spacing: 0.025em;
+  }
+
+  .hero-venue {
+    max-width: calc(100% - 0.5rem);
   }
 
   .hero-event-meta svg {
