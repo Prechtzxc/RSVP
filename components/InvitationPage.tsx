@@ -68,7 +68,7 @@ type CountdownState = {
 };
 
 function getCountdown(now: number): CountdownState {
-  const eventStart = Date.parse("2026-11-20T15:00:00+08:00");
+  const eventStart = Date.parse("2026-11-20T15:30:00+08:00");
   const eventEnd = Date.parse("2026-11-20T19:00:00+08:00");
   const dayStart = Date.parse("2026-11-20T00:00:00+08:00");
   const dayEnd = Date.parse("2026-11-21T00:00:00+08:00");
@@ -198,7 +198,7 @@ export function InvitationPage() {
     "@context": "https://schema.org",
     "@type": "Event",
     name: "Eyelectric & Eyelectrix 28th Anniversary and Thanksgiving Celebration",
-    startDate: "2026-11-20T15:00:00+08:00",
+    startDate: "2026-11-20T15:30:00+08:00",
     endDate: "2026-11-20T19:00:00+08:00",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -301,7 +301,7 @@ export function InvitationPage() {
             <i aria-hidden="true" />
             <div>
               <Clock3 size={18} aria-hidden="true" />
-              <time dateTime="15:00">3:00 PM–7:00 PM</time>
+              <time dateTime="15:30">3:30 PM–7:00 PM</time>
             </div>
           </motion.div>
 
@@ -359,7 +359,7 @@ export function InvitationPage() {
                 <Clock3 aria-hidden="true" />
                 <div>
                   <small>Time</small>
-                  <h3>3:00 PM–7:00 PM</h3>
+                  <h3>3:30 PM–7:00 PM</h3>
                   <p>Philippine Standard Time</p>
                 </div>
               </div>
